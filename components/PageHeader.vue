@@ -1,12 +1,15 @@
 <template>
 <div class="header">
-  <h3 class="header__title">Добавление товара</h3><div class="sort-select">По умолчанию</div>
+  <h3 class="header__title">Добавление товара</h3><SortMenu />
 </div>
 </template>
 
 <script>
+import SortMenu from './SortMenu'
+
 	export default{
-    name: 'Header'
+    name: 'Header',
+    components: {SortMenu},
 	}
 </script>
 

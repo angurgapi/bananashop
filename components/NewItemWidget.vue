@@ -1,6 +1,6 @@
 <template>
     <div class="new-item">
-        <form class="form">
+        <form @submit.prevent="submit" class="form">
             <div class="form__item">
                 <label class="form__label form__label--required" for='title'>Наименование товара</label>
                 <input type="text"
@@ -38,7 +38,7 @@
                 class="form__input">
             </div>
             <div class="form__item">
-                <button :disabled="!isValid" class="form__button" type="submit" :class="{ 'form__button--disabled': !isValid }" @click="submit">Добавить товар</button>
+                <button :disabled="!isValid" class="form__button" type="submit" :class="{ 'form__button--disabled': !isValid }">Добавить товар</button>
             </div>
         </form>
     </div>
@@ -66,6 +66,12 @@ export default {
         ...mapActions('items', ['ADD_ITEM']),
         submit() {
             this.ADD_ITEM(this.formData)
+            this.resetAllFields()
+        },
+        resetAllFields() {
+            for (const key in this.formData) {
+                this.formData[key] = ''
+            }
         }
     }
 }
@@ -73,14 +79,14 @@ export default {
 
 <style lang="scss" scoped>
 .new-item {
-    // height: 440px;
+    max-height: 460px;
     width: 332px;
     padding: 24px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .04);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     &:hover {
-       box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+       box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
     }
 }
 .form {
@@ -109,9 +115,9 @@ export default {
         margin-top: 4px;
         padding: 10px 16px;
         border-radius: 5px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, .04);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
         &:hover {
-        box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
         }
         &::placeholder {
             color: #B4B4B4;

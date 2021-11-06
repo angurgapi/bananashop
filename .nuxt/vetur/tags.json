@@ -10,5 +10,8 @@
   },
   "PageHeader": {
     "description": "Auto imported from components/PageHeader.vue"
+  },
+  "SortMenu": {
+    "description": "Auto imported from components/SortMenu.vue"
   }
 }

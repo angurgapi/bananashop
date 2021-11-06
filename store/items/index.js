@@ -1,5 +1,3 @@
-import cookieparser from 'cookieparser'
-
 import state from './state'
 
 import actions from './actions'
