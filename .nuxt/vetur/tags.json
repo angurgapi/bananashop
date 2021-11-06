@@ -1,0 +1,14 @@
+{
+  "ItemCard": {
+    "description": "Auto imported from components/ItemCard.vue"
+  },
+  "ItemsContainer": {
+    "description": "Auto imported from components/ItemsContainer.vue"
+  },
+  "NewItemWidget": {
+    "description": "Auto imported from components/NewItemWidget.vue"
+  },
+  "PageHeader": {
+    "description": "Auto imported from components/PageHeader.vue"
+  }
+}
