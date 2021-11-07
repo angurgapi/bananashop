@@ -1,15 +1,13 @@
 <template>
 <div class="header">
-  <h3 class="header__title">Добавление товара</h3><SortMenu />
+  <h3 class="header__title">Добавление товара</h3>
 </div>
 </template>
 
 <script>
-import SortMenu from './SortMenu'
 
 	export default{
     name: 'Header',
-    components: {SortMenu},
 	}
 </script>
 

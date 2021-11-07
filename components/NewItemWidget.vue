@@ -38,7 +38,7 @@
                 class="form__input">
             </div>
             <div class="form__item">
-                <button :disabled="!isValid" class="form__button" type="submit" :class="{ 'form__button--disabled': !isValid }">Добавить товар</button>
+                <button :disabled="!isValid" class="form__button" :class="{ 'form__button--disabled': !isValid }">Добавить товар</button>
             </div>
         </form>
     </div>
@@ -65,7 +65,7 @@ export default {
     methods: {
         ...mapActions('items', ['ADD_ITEM']),
         submit() {
-            this.ADD_ITEM(this.formData)
+            this.ADD_ITEM(this.formData)            
             this.resetAllFields()
         },
         resetAllFields() {
