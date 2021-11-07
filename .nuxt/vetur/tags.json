@@ -13,5 +13,8 @@
   },
   "SortMenu": {
     "description": "Auto imported from components/SortMenu.vue"
+  },
+  "SvgIcon": {
+    "description": "Auto imported from components/SvgIcon.vue"
   }
 }

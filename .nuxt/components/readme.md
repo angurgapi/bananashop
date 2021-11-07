@@ -11,3 +11,4 @@ You can directly use them in pages and other components without the need to impo
 - `<NewItemWidget>` | `<new-item-widget>` (components/NewItemWidget.vue)
 - `<PageHeader>` | `<page-header>` (components/PageHeader.vue)
 - `<SortMenu>` | `<sort-menu>` (components/SortMenu.vue)
+- `<SvgIcon>` | `<svg-icon>` (components/SvgIcon.vue)

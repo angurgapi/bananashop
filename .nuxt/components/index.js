@@ -3,6 +3,7 @@ export { default as ItemsContainer } from '../../components/ItemsContainer.vue'
 export { default as NewItemWidget } from '../../components/NewItemWidget.vue'
 export { default as PageHeader } from '../../components/PageHeader.vue'
 export { default as SortMenu } from '../../components/SortMenu.vue'
+export { default as SvgIcon } from '../../components/SvgIcon.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
