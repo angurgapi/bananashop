@@ -66,6 +66,9 @@ export default {
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     background-color: #fff;
     color: #B4B4B4;
+    @media(max-width: 800px) {
+        top: 500px;
+    }
 
     &__menu, &__option {
         list-style: none;

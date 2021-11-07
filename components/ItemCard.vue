@@ -1,5 +1,7 @@
 <template>
+ <transition name="bounce">
     <div class="card">
+       
         <div class="card__header">
             <button class="card__delete" @click="deleteItem(item)">
                 <svg-icon name="delete" />
@@ -14,6 +16,7 @@
         </div>
 
     </div>
+ </transition>
 </template>
 
 <script>
@@ -39,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .card {
     position: relative;
-    width: 332px;
+    width: 100%;
     height: 423px;
     border-radius: 10px;
     box-shadow: 0 10px 12px rgba(0, 0, 0, .2);
@@ -81,5 +84,25 @@ export default {
         right: -5px;
         top: -5px;
     }
+}
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: .2;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: .2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: .2;
+  }
 }
 </style>
