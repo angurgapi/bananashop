@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
+    <SortMenu @sort="handleSort" />
     <NewItemWidget />
-    <ItemsContainer />
+    <ItemsContainer ref="items" />
   </div>
 </template>
 
@@ -10,13 +11,16 @@
 <script>
 import ItemsContainer from '../components/ItemsContainer'
 import NewItemWidget from '../components/NewItemWidget'
+import SortMenu from '../components/SortMenu.vue'
 
 export default {
   data: () => ({}),
-  components: { NewItemWidget, ItemsContainer },
+  components: { NewItemWidget, ItemsContainer, SortMenu },
   methods: {
-     
-    },
+    handleSort(value) {
+      this.$refs.items.activeSort = value
+    }
+  },
 }
 </script>
 

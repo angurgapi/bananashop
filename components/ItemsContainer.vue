@@ -10,16 +10,19 @@ import ItemCard from './ItemCard'
 
 export default {
     name: 'ItemsContainer',
+    props: {
+        activeSort: {
+            type:  [String, Number],
+            default: 1,
+        }
+    },
     components: {ItemCard},
     data: () => ({
-       
+    
     }),
     computed: {
         ...mapState('items', ['items']),
     },
-    mounted() {
-        console.log(this.items)
-    }
 }
 </script>
 

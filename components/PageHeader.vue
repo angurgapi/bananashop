@@ -1,12 +1,13 @@
 <template>
 <div class="header">
-  <h3 class="header__title">Добавление товара</h3><div class="sort-select">По умолчанию</div>
+  <h3 class="header__title">Добавление товара</h3>
 </div>
 </template>
 
 <script>
+
 	export default{
-    name: 'Header'
+    name: 'Header',
 	}
 </script>
 
