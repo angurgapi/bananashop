@@ -1,6 +1,6 @@
 <template>
     <div class="items-container">
-        <ItemCard v-for="item in items" :key="item.id" :item="item" />
+        <ItemCard v-for="item in getSortedItems" :key="item.id" :item="item" />
     </div>
 </template>
 
@@ -17,11 +17,28 @@ export default {
         }
     },
     components: {ItemCard},
-    data: () => ({
-    
-    }),
+    data() {
+        return {
+            // itemsList: [],
+        }
+    },
     computed: {
         ...mapState('items', ['items']),
+        getSortedItems() {
+            let itemsList = [...this.items]
+            switch (this.activeSort) {
+                case 1: 
+                    return itemsList.sort((a, b) => a.title.localeCompare(b.title))
+                case 2: 
+                    return itemsList.sort((a, b) => parseInt(b.price.split(' ').join('')) - parseInt(a.price.split(' ').join('')))
+                case 3: 
+                    return itemsList.sort((a, b) => parseInt(a.price.split(' ').join('')) - parseInt(b.price.split(' ').join('')))
+                default:
+                    return itemsList.sort((a, b) => a.title.localeCompare(b.title))
+
+            }
+            
+        }
     },
 }
 </script>
