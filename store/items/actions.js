@@ -1,6 +1,6 @@
 export default {
  
-  ADD_ITEM({ state, commit }, payload) {
+  ADD_ITEM({ commit }, payload) {
     commit(
       'ADD_TO_ITEMS',
       payload

@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
     name: 'NewItemWidget',
@@ -58,14 +58,20 @@ export default {
         },
     }),
     computed: {
+        ...mapState('items', ['items']),
         isValid() {
             return this.formData.title.length && this.formData.price.length && this.formData.image.length
         }
     },
     methods: {
         ...mapActions('items', ['ADD_ITEM']),
-        submit() {
-            this.ADD_ITEM(this.formData)            
+        submit() {  
+            let newItem = {}
+            for (const key in this.formData) {
+                newItem[key] = this.formData[key]
+            }
+            newItem.id = this.items.length + 1
+            this.ADD_ITEM(newItem)            
             this.resetAllFields()
         },
         resetAllFields() {

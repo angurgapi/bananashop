@@ -26,10 +26,14 @@ export default {
 
 <style lang='scss'>
 .wrapper {
-    padding: 0 32px;
+    padding: 0 32px 32px;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 16px;
+    @media(max-width: 800px) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
   }
 </style>
